@@ -35,7 +35,7 @@ const Weather = () => {
     setLoading(true);
     try {
       const geocodeResponse = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${location}&limit=1&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}`
       );
       const { lat, lon } = geocodeResponse.data[0];
 
@@ -98,14 +98,17 @@ const Weather = () => {
       <div className="overlay bg-black bg-opacity-60 min-h-screen p-5 max-w-5xl mx-auto grid place-items-center">
         <div className="flex justify-evenly w-full items-center">
           <h1 className="text-3xl font-bold text-center mb-4 text-white">
-            Weather Forecast
+            Jamie’s Outdoor Weather Check
           </h1>
+          <p className="text-lg text-white mb-6 text-center">
+            {`Jamie, plan your outdoor adventures with the latest weather details for any city!`}
+          </p>
           <div className="flex justify-center mb-4">
             <input
               type="text"
               value={searchLocation}
               onChange={(e) => setSearchLocation(e.target.value)}
-              className="shadow rounded-md outline-none px-5 py-3 focus:ring-1 focus:ring-purple-300"
+              className="shadow rounded-md outline-none px-5 py-3 focus:ring-1 focus:ring-purple-300 text-black"
               placeholder="Enter location"
             />
             <button onClick={handleSearch} className="btn btn-primary ml-2">
@@ -116,7 +119,13 @@ const Weather = () => {
 
         {loading ? (
           <div>
-            <Image unoptimized src={'/loading.gif'} alt="loading" width={150} height={150} />
+            <Image
+              unoptimized
+              src={"/loading.gif"}
+              alt="loading"
+              width={150}
+              height={150}
+            />
           </div>
         ) : (
           <div className="flex flex-col justify-center items-start max-w-5xl mx-auto w-full gap-10">
