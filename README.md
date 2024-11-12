@@ -26,7 +26,7 @@ To learn more about Next.js, take a look at the following resources:
 - [React.js Documentation](https://react.js.org/docs) - learn about React.js features and API.
 - [Learn React.js](https://reactjs.org/learn) - an interactive React.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can check out [the React.js GitHub repository](https://github.com/vercel/react.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
